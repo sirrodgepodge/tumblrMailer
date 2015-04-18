@@ -1,17 +1,22 @@
 <html>
   <head><meta charset='utf-8'></head>
   <body>
-    <p>Hey FIRST_NAME</p>
+    <p>Hey <%= firstName %></p>
     <br>
     <p>
-      How you doing girrrrrl? it's been like NUM_MONTHS_SINCE_CONTACT hours since we last spoke.  I'm about to start learning to code at Fullstack Academy part-time in-person tomorrow! :).
+      How you doing girrrrrl? it's been like <%= monthsSinceContact %> hours since we last spoke.  I'm about to start learning to code at Fullstack Academy part-time in-person tomorrow! :).
     </p>
     <p>
-      I started a blog about what I've been up to <a href="http://LINK_TO_BLOG">here</a>, check it out!
+      I started a blog about what I've been up to <a href=<%= blogLink %>>here</a>, check it out!
     </p>
-    <p>
-      Lata,<br>
-      Roggie
-    </p>
+    <br>
+    <h2>Latest Posts</h2>
+    <% for(var i=0; i< blogPosts.length; i++) {%>
+       <a href=<%= blogPosts[i].post_url %>><h3><%= blogPosts[i].title %></h3></a>
+       <% } %>
+       <p>
+	 Lata,<br>
+	 Roggie
+       </p>
   </body>
 </html>
